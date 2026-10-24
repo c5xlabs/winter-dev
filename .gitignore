@@ -3,6 +3,8 @@
 
 # Machine-local env-index registry — never committed (tracks index assignments per machine)
 /.winter/state.toml
+/.winter/workflows/
+/.winter/retrospectives/
 
 # Auto-managed by `winter ws init` — extension list imported from AGENTS.md
 /AGENTS.winter.md
