@@ -4,8 +4,8 @@ This workspace develops the **winter** framework and its extensions. Each projec
 CLI in `winter`, the conventions repo in `winter-context`, tmux and docker service orchestration in
 `winter-service-tmux` and `winter-service-docker`, the agentic workflow in `winter-workflow`, GitHub issue tooling in
 `winter-github`, product backlog tooling in `winter-product`, and the public documentation site in `winter-docs`.
-Planning governance lives in `winter-product-requirements` and `winter-engineering-requirements` (being merged into
-`winter-context-planning`), and Fleet product planning in `blizzard-product`.
+Planning governance lives in `winter-product-requirements` and `winter-engineering-requirements` (merged into
+`winter-context-planning`, which replaces them), and Fleet product planning in `blizzard-product`.
 
 ## Project-level conventions
 

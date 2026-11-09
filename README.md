@@ -24,7 +24,7 @@ Declared in `.winter/config.toml` and managed by `winter ws init`:
 - **[winter-docs](https://github.com/paul-gross/winter-docs)** — the public documentation site
 - **[winter-product-requirements](https://github.com/paul-gross/winter-product-requirements)** and
   **[winter-engineering-requirements](https://github.com/paul-gross/winter-engineering-requirements)** — planning
-  governance, being merged into `winter-context-planning`
+  governance, merged into [winter-context-planning](https://github.com/c5xlabs/winter-context-planning)
 - **[blizzard-product](https://github.com/paul-gross/blizzard-product)** — Winter Fleet product planning
 
 The full list (including canon, service providers, nvim, test service, plugin API, and benchmark) is in

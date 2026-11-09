@@ -188,6 +188,10 @@ url = "git@github.com:paul-gross/winter-engineering-requirements.git"
 name = "blizzard-product"
 url = "git@github.com:paul-gross/blizzard-product.git"
 
+[[project_repository]]
+name = "winter-context-planning"
+url = "git@github.com:c5xlabs/winter-context-planning.git"
+
 [[standalone_repository]]
 name = "winter-canon"
 url = "git@github.com:paul-gross/winter-canon.git"
