@@ -5,7 +5,8 @@ CLI in `winter`, the conventions repo in `winter-context`, tmux and docker servi
 `winter-service-tmux` and `winter-service-docker`, the agentic workflow in `winter-workflow`, GitHub issue tooling in
 `winter-github`, product backlog tooling in `winter-product`, and the public documentation site in `winter-docs`.
 Planning governance lives in `winter-product-requirements` and `winter-engineering-requirements` (merged into
-`winter-context-planning`, which replaces them), and Fleet product planning in `blizzard-product`.
+`winter-context-planning`, which replaces them), suite product planning in `winter-planning` (platform, workspace, and
+fleet projects, migrating in by hand), and Fleet product planning in `blizzard-product` until it moves there.
 
 ## Project-level conventions
 
