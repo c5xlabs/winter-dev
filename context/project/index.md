@@ -1,7 +1,8 @@
 # Project context — building winter, with winter
 
 This workspace develops the **winter** framework and its extensions. Each project repo is itself a winter component: the
-CLI in `winter`, the conventions repo in `winter-context`, tmux and docker service orchestration in
+workspace framework and Python CLI in `winter-workspace` (GitHub: `paul-gross/winter`), the platform launcher repo in
+`winter` (GitHub: `c5xlabs/winter`), the conventions repo in `winter-context`, tmux and docker service orchestration in
 `winter-service-tmux` and `winter-service-docker`, the agentic workflow in `winter-workflow`, GitHub issue tooling in
 `winter-github`, product backlog tooling in `winter-product`, and the public documentation site in `winter-docs`.
 Planning governance lives in `winter-product-requirements` and `winter-engineering-requirements` (merged into
