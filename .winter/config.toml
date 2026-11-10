@@ -122,8 +122,13 @@ injected_bytes = 100000
 reference_bytes = 100000
 
 [[project_repository]]
-name = "winter"
+name = "winter-workspace"
 url = "git@github.com:paul-gross/winter.git"
+
+[[project_repository]]
+name = "winter"
+url = "git@github.com:c5xlabs/winter.git"
+main_branch = "main"
 
 [[project_repository]]
 name = "winter-canon"
@@ -196,6 +201,10 @@ url = "git@github.com:c5xlabs/winter-context-planning.git"
 name = "winter-planning"
 url = "git@github.com:c5xlabs/winter-planning.git"
 
+[[project_repository]]
+name = "winter-strategy"
+url = "git@github-paul-gross:c5xlabs/winter-strategy.git"
+
 [[standalone_repository]]
 name = "winter-canon"
 url = "git@github.com:paul-gross/winter-canon.git"
@@ -237,7 +246,7 @@ path = ".winter/ext/workflow"
 
 [[provision.dependency]]
 scope = "feature-environment"
-project = "winter"
+project = "winter-workspace"
 apply = "cd tools/winter-cli && mise trust . && mise run install"
 
 [[provision.dependency]]
@@ -305,7 +314,7 @@ required_services = ["workspace/db"]
 # stands, not of the repo's content.
 # ===========================================================================
 
-[lint.ignore.repo."winter".checks]
+[lint.ignore.repo."winter-workspace".checks]
 # The setup skill installs these four into a workspace and links them as
 # `workspace:/context/…` — correct, because they describe the workspace being
 # set up, not winter's own copies. Orphan detection resolves `workspace:` to

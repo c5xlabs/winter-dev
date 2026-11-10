@@ -11,7 +11,8 @@ they can all be developed in coordinated feature environments. It's the dogfoodi
 
 Declared in `.winter/config.toml` and managed by `winter ws init`:
 
-- **[winter](https://github.com/paul-gross/winter)** — the framework itself (Python CLI, workspace skills, docs)
+- **[winter-workspace](https://github.com/paul-gross/winter)** — the workspace framework (Python CLI, workspace skills, docs)
+- **[winter](https://github.com/c5xlabs/winter)** — the platform launcher repo
 - **[winter-context](https://github.com/paul-gross/winter-context)** — extension: Python conventions, exemplars, README
   guide
 - **[winter-service-tmux](https://github.com/paul-gross/winter-service-tmux)** — extension: tmux-based service
@@ -32,7 +33,7 @@ The full list (including canon, service providers, nvim, test service, plugin AP
 
 Each one is materialised in two or three places:
 
-- `projects/<name>/` — pinned source checkout, always on `master`. Read-only by convention.
+- `projects/<name>/` — source checkout on its configured main branch. Read-only by convention.
 - `<env>/<name>/` — feature worktrees on Greek-letter branches (`alpha`, `beta`, ...). Where actual edits happen.
 - For the extensions, also `./.winter/ext/<short-name>/` (e.g. `harness`, `service-tmux`) — a standalone clone installed
   as a winter extension so its skills, agents, and `on_env_init` / `on_env_destroy` hooks are wired into the workspace
@@ -54,11 +55,11 @@ master). To exercise an in-flight CLI change living in a feature worktree withou
 
 ```sh
 # from anywhere inside the workspace:
-winter --winter=./alpha/winter dashboard
-winter --winter=./alpha/winter ws status alpha
+winter --winter=./alpha/winter-workspace dashboard
+winter --winter=./alpha/winter-workspace ws status alpha
 ```
 
-`PATH` is the feature worktree's checkout of the `winter` repo (the directory containing `tools/winter-cli/`). The
+`PATH` is the feature worktree's checkout of `winter-workspace` (the directory containing `tools/winter-cli/`). The
 launcher swaps the source tree but keeps the workspace root, config, and standalone extensions exactly the same — only
 the Python code that runs is different.
 
