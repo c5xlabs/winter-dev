@@ -158,13 +158,12 @@ path = ".winter/ext/service-process-compose"
 [[provision.dependency]]
 scope = "feature-environment"
 project = "winter-workspace"
-apply = "cd tools/winter-cli && mise trust . && mise run install"
+apply = "cd tools/winter-cli && uv sync"
 
 [[provision.dependency]]
 scope = "feature-environment"
 project = "winter-test-service"
-# --python 3.12: uv now prefers a managed 3.14, which the locked psycopg-binary has no wheel for.
-apply = "uv sync --python 3.12 && (cd web && npm install --no-audit --no-fund)"
+apply = "uv sync && (cd web && npm install --no-audit --no-fund)"
 
 # ===========================================================================
 # Per-env RabbitMQ slice — carves a vhost + user `wts-<env>` out of the shared
