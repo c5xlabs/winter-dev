@@ -18,7 +18,7 @@ Declared in `.winter/config.toml` and managed by `winter ws init`:
 - **[winter-context-planning](https://github.com/c5xlabs/winter-context-planning)** — product and engineering planning governance
 - **[winter-test-service](https://github.com/paul-gross/winter-test-service)** — full-stack service fixture
 - **[blizzard-product](https://github.com/paul-gross/blizzard-product)** — Winter Fleet product planning
-- **[legacy-winter](https://github.com/paul-gross/winter)** — the legacy workspace framework (Python CLI, workspace
+- **[winter-workspace](https://github.com/paul-gross/winter)** — the legacy workspace framework (Python CLI, workspace
   skills, docs)
 - **[legacy-winter-context](https://github.com/paul-gross/winter-context)** — legacy Python conventions, exemplars,
   README guide; retained for development, not installed as governance
@@ -70,11 +70,11 @@ master). To exercise an in-flight CLI change living in a feature worktree withou
 
 ```sh
 # from anywhere inside the workspace:
-winter --winter=./alpha/legacy-winter dashboard
-winter --winter=./alpha/legacy-winter ws status alpha
+winter --winter=./alpha/winter-workspace dashboard
+winter --winter=./alpha/winter-workspace ws status alpha
 ```
 
-`PATH` is the feature worktree's checkout of `legacy-winter` (the directory containing `tools/winter-cli/`). The
+`PATH` is the feature worktree's checkout of `winter-workspace` (the directory containing `tools/winter-cli/`). The
 launcher swaps the source tree but keeps the workspace root, config, and standalone extensions exactly the same — only
 the Python code that runs is different.
 

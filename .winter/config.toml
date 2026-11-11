@@ -79,7 +79,6 @@ reference_bytes = 100000
 [[project_repository]]
 name = "winter"
 url = "git@github.com:c5xlabs/winter.git"
-main_branch = "main"
 
 [[project_repository]]
 name = "winter-planning"
@@ -87,7 +86,7 @@ url = "git@github.com:c5xlabs/winter-planning.git"
 
 [[project_repository]]
 name = "winter-strategy"
-url = "git@github-paul-gross:c5xlabs/winter-strategy.git"
+url = "git@github.com:c5xlabs/winter-strategy.git"
 
 [[project_repository]]
 name = "winter-context"
@@ -106,8 +105,11 @@ name = "blizzard-product"
 url = "git@github.com:paul-gross/blizzard-product.git"
 
 [[project_repository]]
-name = "legacy-winter"
+name = "winter-workspace"
 url = "git@github.com:paul-gross/winter.git"
+# The Rust rewrite lands on `rust-cli`; `master` stays the Python line forked
+# workspaces rebase onto, so this workspace treats `rust-cli` as the main branch.
+main_branch = "rust-cli"
 
 [[project_repository]]
 name = "legacy-winter-context"
@@ -155,7 +157,7 @@ path = ".winter/ext/service-process-compose"
 
 [[provision.dependency]]
 scope = "feature-environment"
-project = "legacy-winter"
+project = "winter-workspace"
 apply = "cd tools/winter-cli && mise trust . && mise run install"
 
 [[provision.dependency]]
@@ -213,7 +215,7 @@ required_services = ["workspace/db"]
 # stands, not of the repo's content.
 # ===========================================================================
 
-[lint.ignore.repo."legacy-winter".checks]
+[lint.ignore.repo."winter-workspace".checks]
 # The setup skill installs these four into a workspace and links them as
 # `workspace:/context/…` — correct, because they describe the workspace being
 # set up, not winter's own copies. Orphan detection resolves `workspace:` to
