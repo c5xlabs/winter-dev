@@ -15,7 +15,8 @@ Declared in `.winter/config.toml` and managed by `winter ws init`:
 - **[winter-planning](https://github.com/c5xlabs/winter-planning)** — suite product planning
 - **[winter-strategy](https://github.com/c5xlabs/winter-strategy)** — private platform strategy
 - **[winter-context](https://github.com/c5xlabs/winter-context)** — shared engineering governance
-- **[winter-context-planning](https://github.com/c5xlabs/winter-context-planning)** — product and engineering planning governance
+- **[winter-context-planning](https://github.com/c5xlabs/winter-context-planning)** — product and engineering planning
+  governance
 - **[winter-test-service](https://github.com/paul-gross/winter-test-service)** — full-stack service fixture
 - **[blizzard-product](https://github.com/paul-gross/blizzard-product)** — Winter Fleet product planning
 - **[winter-workspace](https://github.com/paul-gross/winter)** — the legacy workspace framework (Python CLI, workspace
@@ -33,9 +34,11 @@ Standalone repos in `.winter/config.toml` are installed once under `.winter/ext/
 - **[winter-canon](https://github.com/paul-gross/winter-canon)** — universal harness conventions
 - **[winter-context](https://github.com/c5xlabs/winter-context)** — shared engineering governance
 - **[winter-github](https://github.com/paul-gross/winter-github)** — GitHub issue tooling
+- **[blizzard-usage](https://github.com/paul-gross/blizzard-usage)** — guidance for using Blizzard from this workspace
 - **[winter-service-tmux](https://github.com/paul-gross/winter-service-tmux)** — tmux service orchestration
 - **[winter-service-docker](https://github.com/paul-gross/winter-service-docker)** — Docker service orchestration
-- **[winter-service-process-compose](https://github.com/paul-gross/winter-service-process-compose)** — process-compose service orchestration
+- **[winter-service-process-compose](https://github.com/paul-gross/winter-service-process-compose)** — process-compose
+  service orchestration
 
 `winter-context` is both a development project and an installed standalone; its installed copy is updated independently
 of feature worktrees. `winter-context-planning` supplies governance directly from its project checkout.
@@ -56,7 +59,8 @@ the local config. The shared workspace does not require winter-workflow.
 ## Getting started
 
 1. Clone this repo.
-2. Install the winter CLI (`./tools/winter-cli/install.sh`) and run `winter ws init` to clone projects and standalone extensions.
+2. Install the winter CLI (`./tools/winter-cli/install.sh`) and run `winter ws init` to clone projects and standalone
+   extensions.
 3. Run `winter ws init alpha`, then `winter provision alpha` before running services or exercising the environment.
 4. Work in `alpha/`. Each project repo is a worktree on branch `alpha`.
 
