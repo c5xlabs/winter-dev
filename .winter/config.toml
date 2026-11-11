@@ -23,51 +23,6 @@ opencode = "openai/gpt-6.1-terra"
 [model_tiers.haiku]
 opencode = "openai/gpt-6-luna"
 
-[agent_model_overrides.ice-carver]
-claude = { effort = "high" }
-codex = { effort = "high" }
-opencode = { effort = "high" }
-
-[agent_model_overrides.cold-reviewer]
-claude = { model = "opus", effort = "medium" }
-codex = { model = "gpt-6.1-terra", effort = "max" }
-opencode = { model = "openai/gpt-6.1-terra", effort = "max" }
-
-[agent_model_overrides.plan-reviewer]
-claude = { model = "opus", effort = "medium" }
-codex = { model = "gpt-6.1-terra", effort = "max" }
-opencode = { model = "openai/gpt-6.1-terra", effort = "max" }
-
-[agent_model_overrides.harness-reviewer]
-claude = { model = "opus", effort = "medium" }
-codex = { model = "gpt-6.1-terra", effort = "max" }
-opencode = { model = "openai/gpt-6.1-terra", effort = "max" }
-
-[agent_model_overrides.faceted-reviewer]
-claude = { model = "opus", effort = "medium" }
-codex = { model = "gpt-6.1-terra", effort = "max" }
-opencode = { model = "openai/gpt-6.1-terra", effort = "max" }
-
-[agent_model_overrides.documentation-reviewer]
-claude = { model = "opus", effort = "low" }
-codex = { model = "gpt-6-luna", effort = "max" }
-opencode = { model = "openai/gpt-6-luna", effort = "max" }
-
-[agent_model_overrides.context-reviewer]
-claude = { model = "opus", effort = "low" }
-codex = { model = "gpt-6-luna", effort = "max" }
-opencode = { model = "openai/gpt-6-luna", effort = "max" }
-
-[agent_model_overrides.diff-classifier]
-claude = { model = "sonnet", effort = "medium" }
-codex = { model = "gpt-6-luna", effort = "high" }
-opencode = { model = "openai/gpt-6-luna", effort = "high" }
-
-[agent_model_overrides.manifest-auditor]
-claude = { model = "sonnet", effort = "medium" }
-codex = { model = "gpt-6-luna", effort = "high" }
-opencode = { model = "openai/gpt-6-luna", effort = "high" }
-
 # Env variable bands (see context/winter/cli/configuration/ports-and-environments.md).
 # The env-provisioner resolves these per scope and injects them into service
 # providers: workspace scope gets only the workspace band; a feature env gets the
@@ -109,7 +64,7 @@ WDV_RABBITMQ_MGMT_PORT = "${WINTER_WORKSPACE_PORT_BASE+2}"
 WDV_POSTGRES_PORT      = "${WINTER_WORKSPACE_PORT_BASE+3}"
 
 # Two service providers, bound explicitly. tmux runs the from-source services
-# (docs, shell, api, web, worker); winter-service-docker runs the dockerized
+# (shell, api, web, worker); winter-service-docker runs the dockerized
 # daemons (workspace-shared db + rabbitmq). Order is the `up` fan-out order —
 # docker first so the db/broker are up before the tmux api/worker that need them
 # (`up <env>` ensures the workspace scope first regardless). Service names are
@@ -122,80 +77,9 @@ injected_bytes = 100000
 reference_bytes = 100000
 
 [[project_repository]]
-name = "winter-workspace"
-url = "git@github.com:paul-gross/winter.git"
-
-[[project_repository]]
 name = "winter"
 url = "git@github.com:c5xlabs/winter.git"
 main_branch = "main"
-
-[[project_repository]]
-name = "winter-canon"
-url = "git@github.com:paul-gross/winter-canon.git"
-
-[[project_repository]]
-name = "winter-github"
-url = "git@github.com:paul-gross/winter-github.git"
-
-[[project_repository]]
-name = "winter-context"
-url = "git@github.com:paul-gross/winter-context.git"
-
-[[project_repository]]
-name = "winter-product"
-url = "git@github.com:paul-gross/winter-product.git"
-
-[[project_repository]]
-name = "winter-service-tmux"
-url = "git@github.com:paul-gross/winter-service-tmux.git"
-
-[[project_repository]]
-name = "winter-service-docker"
-url = "git@github.com:paul-gross/winter-service-docker.git"
-
-[[project_repository]]
-name = "winter-service-process-compose"
-url = "git@github.com:paul-gross/winter-service-process-compose.git"
-
-[[project_repository]]
-name = "winter-workflow"
-url = "git@github.com:paul-gross/winter-workflow.git"
-
-[[project_repository]]
-name = "winter-docs"
-url = "git@github.com:paul-gross/winter-docs.git"
-
-[[project_repository]]
-url = "git@github.com:paul-gross/winter-nvim.git"
-
-[[project_repository]]
-name = "winter-test-service"
-url = "git@github.com:paul-gross/winter-test-service.git"
-
-[[project_repository]]
-name = "winter-plugin-api"
-url = "git@github.com:paul-gross/winter-plugin-api.git"
-
-[[project_repository]]
-name = "winter-benchmark"
-url = "git@github.com:paul-gross/winter-benchmark.git"
-
-[[project_repository]]
-name = "winter-product-requirements"
-url = "git@github.com:paul-gross/winter-product-requirements.git"
-
-[[project_repository]]
-name = "winter-engineering-requirements"
-url = "git@github.com:paul-gross/winter-engineering-requirements.git"
-
-[[project_repository]]
-name = "blizzard-product"
-url = "git@github.com:paul-gross/blizzard-product.git"
-
-[[project_repository]]
-name = "winter-context-planning"
-url = "git@github.com:c5xlabs/winter-context-planning.git"
 
 [[project_repository]]
 name = "winter-planning"
@@ -205,20 +89,45 @@ url = "git@github.com:c5xlabs/winter-planning.git"
 name = "winter-strategy"
 url = "git@github-paul-gross:c5xlabs/winter-strategy.git"
 
+[[project_repository]]
+name = "winter-context"
+url = "git@github.com:c5xlabs/winter-context.git"
+
+[[project_repository]]
+name = "winter-context-planning"
+url = "git@github.com:c5xlabs/winter-context-planning.git"
+
+[[project_repository]]
+name = "winter-test-service"
+url = "git@github.com:paul-gross/winter-test-service.git"
+
+[[project_repository]]
+name = "blizzard-product"
+url = "git@github.com:paul-gross/blizzard-product.git"
+
+[[project_repository]]
+name = "legacy-winter"
+url = "git@github.com:paul-gross/winter.git"
+
+[[project_repository]]
+name = "legacy-winter-context"
+url = "git@github.com:paul-gross/winter-context.git"
+extension = false
+
 [[standalone_repository]]
 name = "winter-canon"
 url = "git@github.com:paul-gross/winter-canon.git"
 path = ".winter/ext/canon"
 
 [[standalone_repository]]
+name = "winter-context"
+url = "git@github.com:c5xlabs/winter-context.git"
+path = ".winter/ext/context"
+
+[[standalone_repository]]
 name = "winter-github"
 url = "git@github.com:paul-gross/winter-github.git"
 path = ".winter/ext/github"
-
-[[standalone_repository]]
-name = "winter-context"
-url = "git@github.com:paul-gross/winter-context.git"
-path = ".winter/ext/context"
 
 [[standalone_repository]]
 name = "winter-service-tmux"
@@ -231,9 +140,9 @@ url = "git@github.com:paul-gross/winter-service-docker.git"
 path = ".winter/ext/service-docker"
 
 [[standalone_repository]]
-name = "winter-workflow"
-url = "git@github.com:paul-gross/winter-workflow.git"
-path = ".winter/ext/workflow"
+name = "winter-service-process-compose"
+url = "git@github.com:paul-gross/winter-service-process-compose.git"
+path = ".winter/ext/service-process-compose"
 
 # ===========================================================================
 # Provisioning — `winter provision <env>` lifecycle handlers
@@ -246,7 +155,7 @@ path = ".winter/ext/workflow"
 
 [[provision.dependency]]
 scope = "feature-environment"
-project = "winter-workspace"
+project = "legacy-winter"
 apply = "cd tools/winter-cli && mise trust . && mise run install"
 
 [[provision.dependency]]
@@ -254,16 +163,6 @@ scope = "feature-environment"
 project = "winter-test-service"
 # --python 3.12: uv now prefers a managed 3.14, which the locked psycopg-binary has no wheel for.
 apply = "uv sync --python 3.12 && (cd web && npm install --no-audit --no-fund)"
-
-[[provision.dependency]]
-scope = "feature-environment"
-project = "winter-docs"
-apply = "npm install --no-audit --no-fund"
-
-[[provision.dependency]]
-scope = "feature-environment"
-project = "winter-plugin-api"
-apply = "uv sync"
 
 # ===========================================================================
 # Per-env RabbitMQ slice — carves a vhost + user `wts-<env>` out of the shared
@@ -314,7 +213,7 @@ required_services = ["workspace/db"]
 # stands, not of the repo's content.
 # ===========================================================================
 
-[lint.ignore.repo."winter-workspace".checks]
+[lint.ignore.repo."legacy-winter".checks]
 # The setup skill installs these four into a workspace and links them as
 # `workspace:/context/…` — correct, because they describe the workspace being
 # set up, not winter's own copies. Orphan detection resolves `workspace:` to
