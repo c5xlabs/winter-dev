@@ -11,10 +11,10 @@ of `.winter/config.toml` — so this file is short.
 - **Docker** — winter-service-docker runs the per-env Postgres `db` and the workspace-shared RabbitMQ broker as docker
   compose services. Install Docker Engine + Compose v2 and add your user to the `docker` group (re-login or
   `newgrp docker` to pick up the membership).
-- **uv** — `winter provision <env>` installs the Python deps for `winter-test-service` and `winter-plugin-api` via
-  `uv sync` (their `[[provision.dependency]]` handlers). Install [uv](https://docs.astral.sh/uv/):
+- **uv** — `winter provision <env>` installs the Python deps for `winter-test-service` via
+  `uv sync` (its `[[provision.dependency]]` handler). Install [uv](https://docs.astral.sh/uv/):
   `curl -LsSf https://astral.sh/uv/install.sh | sh`.
-- **Node** — `winter provision <env>` runs `npm install` for `winter-docs` and `winter-test-service:/web`. Install
+- **Node** — `winter provision <env>` runs `npm install` for `winter-test-service:/web`. Install
   Node.js (with `npm`).
 
 ## No per-env environment step
@@ -39,7 +39,7 @@ their volumes) belong to the workspace scope — `winter service down workspace`
 
 ## Service orchestration
 
-Two providers, bound together under `[capabilities]` in `.winter/config.toml`. The from-source services (docs, shell,
+Two providers, bound together under `[capabilities]` in `.winter/config.toml`. The from-source services (shell,
 api, web, worker) are declared in the winter-service-tmux
 [`config.toml`](../../.winter/config/winter-service-tmux/config.toml) +
 [`layout-hook.sh`](../../.winter/config/winter-service-tmux/layout-hook.sh); the dockerized daemons (per-env Postgres

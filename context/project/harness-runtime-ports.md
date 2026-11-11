@@ -1,9 +1,8 @@
 # Harness runtime-port availability
 
-Which agent harnesses in this workspace support the semantic runtime ports declared in
-`winter-workflow:/methodology/runtime-ports.md` — the per-harness capability facts a session adapter resolves before
-choosing an execution placement that depends on a port. A harness, or a nesting depth, with no declared support for a
-port is treated as **not** supporting it: degrade per the process's declared fallback, or return
+Which agent harnesses in this workspace support isolated spawning, context forking, and resident-worker coordination.
+Read these capability facts before choosing an execution placement that depends on them. A harness, or a nesting depth,
+with no declared support for a capability is treated as **not** supporting it: degrade per the process's declared fallback, or return
 `unsupported-capability` when no fallback is permitted.
 
 | Harness     | Spawn an isolated role                                                                                           | Fork the current context                                                                                                                                                                                                                                                                                                       | Create and coordinate resident workers                                                                                                                                                                                                                                                               |

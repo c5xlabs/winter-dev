@@ -30,12 +30,10 @@ tmux split-window -v -t "${WINTER_TMUX_SESSION}:0.0" \
 tmux select-layout -t "${WINTER_TMUX_SESSION}:0" tiled
 
 # ---------------------------------------------------------------------------
-# Window 1 — docs server + utility shell.
+# Window 1 — utility shell.
 # ---------------------------------------------------------------------------
-tmux new-window   -t "${WINTER_TMUX_SESSION}:1" -n docs \
-  -c "${WINTER_TMUX_WORKTREE_DIR}"                                    # pane 1.0 (docs)
-tmux split-window -v -t "${WINTER_TMUX_SESSION}:1.0" \
-  -c "${WINTER_TMUX_WORKTREE_DIR}"                                    # pane 1.1 (shell)
+tmux new-window   -t "${WINTER_TMUX_SESSION}:1" -n shell \
+  -c "${WINTER_TMUX_WORKTREE_DIR}"                                    # pane 1.0 (shell)
 
 # ---------------------------------------------------------------------------
 # Pane titles — name each pane after its service. Without this, configs that
@@ -45,8 +43,7 @@ tmux split-window -v -t "${WINTER_TMUX_SESSION}:1.0" \
 tmux select-pane -t "${WINTER_TMUX_SESSION}:0.0" -T api
 tmux select-pane -t "${WINTER_TMUX_SESSION}:0.1" -T web
 tmux select-pane -t "${WINTER_TMUX_SESSION}:0.2" -T worker
-tmux select-pane -t "${WINTER_TMUX_SESSION}:1.0" -T docs
-tmux select-pane -t "${WINTER_TMUX_SESSION}:1.1" -T shell
+tmux select-pane -t "${WINTER_TMUX_SESSION}:1.0" -T shell
 
 # ---------------------------------------------------------------------------
 # Status bar — session name only. Drops tmux's hostname/clock default so an

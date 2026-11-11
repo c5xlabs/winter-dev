@@ -2,7 +2,7 @@
 # See winter-service-tmux:/workflow/config.toml.example for annotated schema docs.
 #
 # Validate with:
-#   cd alpha/winter-service-tmux
+#   cd .winter/ext/service-tmux
 #   PYTHONPATH=src python3 -m service_manifest.cli validate /path/to/workspace
 
 layout_hook = "layout-hook.sh"
@@ -53,27 +53,14 @@ name = "worker"
 target = "0.2"
 cmd = "cd winter-test-service && uv run python -m worker.main"
 
-# --- docs + utility shell (window 1) --------------------------------------
+# --- utility shell (window 1) ---------------------------------------------
 
 [[service]]
-# Pane 1.0: winter-docs dev server. Runs from the env's winter-docs worktree
-# and binds to $WINTER_PORT_BASE so each env serves on its own port.
-# Served under the site's /winter-docs base path.
-name = "docs"
-target = "1.0"
-cmd = 'cd winter-docs && npm run dev -- --port "${WINTER_PORT_BASE:-4321}" --host'
-
-[service.health]
-# Astro dev server serves under the /winter-docs base path (see cmd port binding).
-type = "url"
-target = "http://localhost:${WINTER_PORT_BASE}/winter-docs"
-
-[[service]]
-# Pane 1.1: utility shell — empty command leaves an interactive prompt.
+# Pane 1.0: utility shell — empty command leaves an interactive prompt.
 # log = "pane": read live via tmux capture-pane (no file persistence) — also the
 # canonical pane-mode example for testing `winter service logs <env> shell`.
 name = "shell"
-target = "1.1"
+target = "1.0"
 cmd = ""
 log = "pane"
 

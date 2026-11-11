@@ -13,8 +13,8 @@ Use Conventional Commits with a scope:
 Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `perf`, `style`, `ai`. Scope is usually the repo name (e.g.
 `winter-cli`, `winter-product`) or a subsystem within it.
 
-The `/wf-commit` skill (from the `winter-workflow` extension) generates commits in this exact format — prefer it over
-hand-writing messages.
+When the optional local `winter-workflow` extension is installed, its `/wf-commit` skill can generate this format.
+Without it, write the commit message directly.
 
 ### Issue references
 
@@ -49,10 +49,8 @@ against it. When creating a new winter-ecosystem repo on GitHub, bootstrap the f
 
 ## Pre-commit checks
 
-No automated gate (no PR review, no CI). Each project repo documents its own pre-push convention in its `context/`
-directory. For Python repos, the canonical rules live at `winter-context:/standards/linting.md` and
-`winter-context:/standards/typechecking.md` — run `mise run format`, `mise run lint`, and `mise run typecheck` before
-pushing.
+No automated gate (no PR review, no CI). Follow each project repo's own `CONTRIBUTING.md` and `context/` for its
+pre-push checks. Shared testing governance is routed from `winter-context:/standards/index.md`.
 
 ## Delivery
 
