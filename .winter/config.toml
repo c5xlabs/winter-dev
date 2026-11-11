@@ -127,6 +127,11 @@ url = "git@github.com:c5xlabs/winter-context.git"
 path = ".winter/ext/context"
 
 [[standalone_repository]]
+name = "blizzard-usage"
+url = "git@github.com:paul-gross/blizzard-usage.git"
+path = ".winter/ext/usage"
+
+[[standalone_repository]]
 name = "winter-github"
 url = "git@github.com:paul-gross/winter-github.git"
 path = ".winter/ext/github"
