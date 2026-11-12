@@ -84,6 +84,11 @@ url = "git@github.com:c5xlabs/winter.git"
 name = "winter-planning"
 url = "git@github.com:c5xlabs/winter-planning.git"
 
+[[standalone_repository]]
+name = "winter-context-planning"
+url = "git@github.com:c5xlabs/winter-context-planning.git"
+path = ".winter/ext/context-planning"
+
 [[project_repository]]
 name = "winter-strategy"
 url = "git@github.com:c5xlabs/winter-strategy.git"
