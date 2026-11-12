@@ -33,6 +33,9 @@ Standalone repos in `.winter/config.toml` are installed once under `.winter/ext/
 
 - **[winter-canon](https://github.com/paul-gross/winter-canon)** — universal harness conventions
 - **[winter-context](https://github.com/c5xlabs/winter-context)** — shared engineering governance
+- **[winter-planning](https://github.com/c5xlabs/winter-planning)** — suite product planning
+- **[winter-context-planning](https://github.com/c5xlabs/winter-context-planning)** — product and engineering planning
+  governance
 - **[winter-github](https://github.com/paul-gross/winter-github)** — GitHub issue tooling
 - **[blizzard-usage](https://github.com/paul-gross/blizzard-usage)** — guidance for using Blizzard from this workspace
 - **[winter-service-tmux](https://github.com/paul-gross/winter-service-tmux)** — tmux service orchestration
@@ -40,8 +43,8 @@ Standalone repos in `.winter/config.toml` are installed once under `.winter/ext/
 - **[winter-service-process-compose](https://github.com/paul-gross/winter-service-process-compose)** — process-compose
   service orchestration
 
-`winter-context` is both a development project and an installed standalone; its installed copy is updated independently
-of feature worktrees. `winter-context-planning` supplies governance directly from its project checkout.
+`winter-context`, `winter-planning`, and `winter-context-planning` are both development projects and installed
+standalones; their installed copies are updated independently of feature worktrees.
 
 Personal extensions belong in the gitignored `.winter/config.local.toml`. For example, to use
 [winter-workflow](https://github.com/paul-gross/winter-workflow) locally, add:
