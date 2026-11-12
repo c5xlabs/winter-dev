@@ -6,7 +6,7 @@ workspace framework. The authoritative project and standalone lists are in
 
 Shared engineering governance comes from the `c5xlabs/winter-context` standalone at `.winter/ext/context`; its project
 checkout is for development. `legacy-winter-context` is not an active governance provider. Planning governance comes
-from the `winter-context-planning` project. Service providers and GitHub tooling are standalone extensions.
+from the `winter-context-planning` standalone at `.winter/ext/context-planning`; its project checkout is for development. Service providers and GitHub tooling are standalone extensions.
 
 Personal extensions are declared in the gitignored `.winter/config.local.toml`. `winter-workflow` is optional, not a
 shared workspace dependency.
