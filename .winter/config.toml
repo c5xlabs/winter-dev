@@ -131,6 +131,14 @@ name = "winter-context"
 url = "git@github.com:c5xlabs/winter-context.git"
 path = ".winter/ext/context"
 
+# Directory keeps the `winter-` prefix: winter-planning has no winter-ext.toml, so
+# its symlink prefix falls back to the directory name, and `planning` is already
+# claimed by winter-context-planning's manifest prefix.
+[[standalone_repository]]
+name = "winter-planning"
+url = "git@github.com:c5xlabs/winter-planning.git"
+path = ".winter/ext/winter-planning"
+
 [[standalone_repository]]
 name = "blizzard-usage"
 url = "git@github.com:paul-gross/blizzard-usage.git"
