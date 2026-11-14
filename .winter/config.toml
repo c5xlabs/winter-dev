@@ -176,7 +176,8 @@ path = ".winter/ext/service-process-compose"
 [[provision.dependency]]
 scope = "feature-environment"
 project = "winter-workspace"
-apply = "cd tools/winter-cli && uv sync"
+# Tolerates both layouts: the Python tool on `master`, and the Rust crate on `rust-cli`.
+apply = "if [ -d tools/winter-cli ]; then (cd tools/winter-cli && uv sync); fi; if [ -f Cargo.toml ]; then cargo fetch; fi"
 
 [[provision.dependency]]
 scope = "feature-environment"
