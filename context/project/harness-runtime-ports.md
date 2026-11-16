@@ -2,8 +2,8 @@
 
 Which agent harnesses in this workspace support isolated spawning, context forking, and resident-worker coordination.
 Read these capability facts before choosing an execution placement that depends on them. A harness, or a nesting depth,
-with no declared support for a capability is treated as **not** supporting it: degrade per the process's declared fallback, or return
-`unsupported-capability` when no fallback is permitted.
+with no declared support for a capability is treated as **not** supporting it: use the process's declared fallback, or
+stop and tell the caller when it declares none.
 
 | Harness     | Spawn an isolated role                                                                                           | Fork the current context                                                                                                                                                                                                                                                                                                       | Create and coordinate resident workers                                                                                                                                                                                                                                                               |
 | ----------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
