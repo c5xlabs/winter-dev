@@ -47,6 +47,14 @@ Every `paul-gross/winter*` repo carries the canonical label set owned by `winter
 Bootstrapping the canonical label set). `paul-gross/winter` is the reference repo — when label drift is suspected, diff
 against it. When creating a new winter-ecosystem repo on GitHub, bootstrap the full set before filing its first issue.
 
+## Publishing planning work
+
+Planning work in `winter-planning` is published to the GitHub repo of the code project that builds it. Read that repo
+from the project's `url` in `.winter/config.toml`. Don't guess it from the project name. The `workspace` planning
+project is built in `winter-workspace`, and that repo is **`paul-gross/winter`**. So its epics and slices are published
+there and recorded as `external: github:paul-gross/winter#N`. The `c5xlabs/winter-workspace` ids in the planning README
+only illustrate the notation. They are not a target.
+
 ## Pre-commit checks
 
 No automated gate (no PR review, no CI). Follow each project repo's own `CONTRIBUTING.md` and `context/` for its
